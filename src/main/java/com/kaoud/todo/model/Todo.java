@@ -6,6 +6,7 @@ import org.hibernate.proxy.HibernateProxy;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.ZonedDateTime;
 import java.util.Objects;
 
 @Entity
@@ -21,6 +22,11 @@ public class Todo implements Serializable {
     @Column(name = "id", nullable = false)
     private Long id;
 
+    private String title;
+    private String description;
+    private ZonedDateTime startDate;
+    private boolean done;
+    private boolean favorite;
     @ManyToOne
     @JoinColumn(name = "categoryId")
     @JsonIgnore
