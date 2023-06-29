@@ -31,7 +31,7 @@ public class Category implements Serializable {
     private User user;
 
     @OneToMany(mappedBy = "category" , fetch = FetchType.EAGER)
-    private List<Todo> todo;
+    private List<Todo> todoList;
 
     @Override
     public final boolean equals(Object o) {
